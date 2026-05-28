@@ -1,40 +1,57 @@
-#include <iostream> 
-#include "Student.h"
+#include <iostream>
+#include <string>
+#include "notepad.h"
+
 using namespace std;
 
 int main()
+	
 {
-	int choice;
-	do
-{
+int option;
+string fileName;
 
-cout << "\n1. Save learner";
-cout << "\n2.Display learners";
-cout << "\n3. Exit";
-cout << "\nChoose: ";
-cin >> choice;
-
-switch(choice)
+do
 {
-	case 1:
-		saveLearner();
-		break;
-		
-		case 2:
-			displayLearners();
+	cout << "\n==========MY NOTE SYSTEM =============" << endl;
+	cout << "1. Create Notes" << endl;
+	cout << "2. View Notes" << endl;
+	cout << "3. Add Notes" << endl;
+	cout << "4. Quit" << endl;
+	cout << "5. Choose option: ";
+	
+	cin >> option;
+	cin. ignore();
+	
+	switch(option)
+	{
+		case 1:
+			cout << "Enter filename: ";
+			getline(cin, fileName);
+			
+			createNote(fileName);
+			break;
+			case 2:
+			cout << "Enter file name: ";
+			getline(cin,fileName);
 			break;
 			
 			case 3:
-				cout << "program Closed";
+				cout << "Enter file name: ";
+				getline(cin, fileName);
 				break;
 				
-				default:
-					cout << "invalid";
+				case 4:
+					cout << "program ended." << endl;
+					break;
 					
-				}
-				
-			}while(choice != 3);
-			
-			return 0; 
-		}
+					default:
+						cout << "Wrong option selected." << endl;
+						
+					}
+					}while(option != 4);
+	return 0;
+}
+	 
+
+
 
